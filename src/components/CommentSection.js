@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { userIcon } from "../utils/constants";
 import useVideoComment from "../utils/hooks/useVideoComments";
-import Comment from "./CommentComponent";
 import CommentComponent from "./CommentComponent";
 
 const CommentSection = ({video})=>{
@@ -32,7 +31,7 @@ const CommentSection = ({video})=>{
             {/* add a comment */}
             <div className="mt-5 flex justify-between items-center gap-5">
                 <img src={userIcon} className="h-10 rounded-full"></img>
-                <input type="text" className="w-full outline-none text-lg py-3 border-b-[2px] border-b-gray-400" placeholder="Enter Your Comment" onChange={(e)=>setYourComment(e.target.value)} value={yourComment}></input>
+                <input type="text" className="w-full outline-none text-lg py-3 border-b border-b-gray-400" placeholder="Enter Your Comment" onChange={(e)=>setYourComment(e.target.value)} value={yourComment}></input>
                 {!yourComment|| yourComment===""?null:<button className="bg-blue-500 p-2 px-4 rounded-lg text-white">Submit</button>}
             </div>
             {filteredComments?.map((comment)=>(<CommentComponent key={comment.id} commentData={comment} />))}

@@ -1,23 +1,26 @@
 import { useState } from "react";
 import { monthNames } from "../utils/constants";
+import { formatViewCount } from "../utils/getDateGap";
 
 const VideoDescription = ({video})=>{
+    const[descriptionFormat , setDescriptionFormat] = useState(false);
+
+    if(!video) return null;
     const{snippet , statistics} = video;
     const{viewCount} = statistics;
     const {publishedAt , tags , description } = snippet;
     const publishedDate = new Date(publishedAt);
-    const[descriptionFormat , setDescriptionFormat] = useState(false);
 
 
     return(
         <div className="bg-gray-200 px-4 p-2 rounded-xl my-3">
             <div className="flex justify-between gap-2 font-semibold ">
                 <div className="w-3/12 flex gap-4">
-                <p>{viewCount} views</p>
+                {viewCount?<p>{formatViewCount(viewCount)} views</p>:null}
                 <p>{publishedDate.getDate()} {monthNames[publishedDate.getMonth()]}  {publishedDate.getFullYear()}</p>
                 </div>
                 <div className="w-9/12 flex flex-wrap gap-1">
-                    {tags.map((tag)=>(<p className="cursor-pointer text-blue-600">{"#"+tag}</p>))}
+                    {tags?.map((tag)=>(<p className="cursor-pointer text-blue-600">{"#"+tag}</p>))}
                 </div>
             </div>
             {!descriptionFormat ? (

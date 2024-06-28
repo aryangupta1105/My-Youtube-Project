@@ -22,7 +22,7 @@ const ChannelDetail = ({video})=>{
                     </div>
                     {/* right part */}
                     <div >
-                        <button className="bg-gray-100 p-2 px-3 rounded-l-full border-r  border-r-gray-300"><i class="fa-solid fa-thumbs-up"></i>   <span className="border-r">{formatViewCount(likeCount)}</span></button>
+                        <button className="bg-gray-100 p-2 px-3 rounded-l-full border-r  border-r-gray-300"><i class="fa-solid fa-thumbs-up"></i>   <span className="border-r">{likeCount? formatViewCount(likeCount): null}</span></button>
                         <button className="bg-gray-100 p-2 px-3 rounded-r-full "><i class="fa-solid  fa-thumbs-down" ></i></button>
                         <button className="bg-gray-100 hover:bg-gray-200 transition-all duration-400 ml-4 p-2 px-4 rounded-3xl " >Clip<i class="fa-solid fa-scissors px-1"></i></button>
                         <button className="bg-gray-100 hover:bg-gray-200 transition-all duration-400 ml-4 p-2 px-4 rounded-3xl " >Download<i class="fa-solid fa-download px-1"></i></button>

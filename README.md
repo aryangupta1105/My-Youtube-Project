@@ -17,6 +17,7 @@
 - configured Routing 
 - created Header component
 - created SideBar Component (Menu)
+- setup Firebase to the app and deployment
 - created Main Container
     - created Video Container
     - fetched popular video data from youtube api
@@ -37,6 +38,16 @@
 - Added routing to SideBar Home icon
 - Creating Higher Order Component for Video Card
 - Creating the search feature
+    - showing Suggestion Feature
+    - fetching youtube suggestion api to fetch suggestions
+    - Showing suggestion on search ui
+    - Added Routing to the suggestions
+    - Configured input bar to close on clicking outside and isSubmitted 
+    - fetching the search query using UseSearchParams
+    - fetching the videos using search_query term
+- Created the Search Result Page using results 
+- fetched the video Data using videoId from search_query api hook
+- Setted routing to watch page from result Video Card using videoId
 
 
 

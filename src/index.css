@@ -10,3 +10,13 @@
     text-overflow: ellipsis;
     max-height: calc(1.2em * 3  );
   }
+
+.element {
+    overflow: hidden; /* Hide the scrollbar */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.element::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
