@@ -1,0 +1,7 @@
+.Filter-list{
+    scroll-behavior: smooth;
+}
+
+.Filter-list::-webkit-scrollbar{
+    display: none;
+}
