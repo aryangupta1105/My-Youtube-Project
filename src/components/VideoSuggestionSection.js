@@ -11,7 +11,7 @@ const VideoSuggestionSection = ()=>{
     if(!videos) return <Shimmer/>;
     return(
         <div className="absolute w-3/12 right-0 top-0 mr-14">
-            <div className="flex flex-col gap-3 overflow-y-scroll h-screen element scroll-smooth ">
+            <div className="flex flex-col gap-3 overflow-y-scroll element h-full ">
             <FilterButtonList/>
             {videos?.map((video)=>(<Link  to={"/watch?v=" + video?.id} ><SuggestionVideoCard  videoData={video}/></Link>))}
             </div>

@@ -62,7 +62,7 @@ const Header = ()=>{
                     <button className="rounded-full ml-2 w-[40px] h-[40px] bg-gray-200 cursor-pointer "><i class="fa-solid fa-microphone"></i></button>
                 </div>
                
-                {!isSubmitted && searchText !==  ""  ? <SearchSuggestions setIsSubmitted={setIsSubmitted} suggestions={data}/> : null}
+                {!isSubmitted && searchText !==  ""  ? <SearchSuggestions setSearchText={setSearchText} setIsSubmitted={setIsSubmitted} suggestions={data}/> : null}
 
             </div>
             <div>

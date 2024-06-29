@@ -21,7 +21,7 @@ const SearchResultPage = ()=>{
     return(
         <div className="w-full flex flex-col gap-3 px-14 py-4 ">
             {results?.map((video)=>(
-                <ResultVideoCard key={video?.id?.videoId} videoId={video?.id?.videoId}/>
+                 <ResultVideoCard key={video?.id?.videoId} videoId={video?.id?.videoId}/>
             ))}
         </div>
     )

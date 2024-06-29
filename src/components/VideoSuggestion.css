@@ -1,4 +1,11 @@
+.element {
+    overflow: hidden; /* Prevents the scrollbar from showing */
+    overflow-y: scroll; /* Enables vertical scrolling */
+    -webkit-overflow-scrolling: touch; /* Enables smooth scrolling for touch devices */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
 
 .element::-webkit-scrollbar {
-    display: none;  /* Safari and Chrome */
+    display: none; /* Chrome, Safari, Opera */
 }

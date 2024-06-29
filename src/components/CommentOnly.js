@@ -1,19 +1,35 @@
 import { formatViewCount, getDateGap } from "../utils/getDateGap";
 
-const CommentComponent = ({commentData})=>{
-    const{snippet} = commentData?.snippet?.topLevelComment;
+const CommentOnly = ({TopLevelData , isReply})=>{
 
-    const{authorChannelUrl , authorDisplayName, authorProfileImageUrl, likeCount , textDisplay , textOriginal, updatedAt , publishedAt} = snippet;
+    if(!TopLevelData) return null;
+    let commentData;
 
+    if (!isReply) {
+        commentData = TopLevelData?.snippet?.topLevelComment?.snippet;
+    } else {
+        commentData = TopLevelData?.snippet;
+    }
 
+    if(!commentData) return null;
+
+    const {
+        authorChannelUrl,
+        authorDisplayName,
+        authorProfileImageUrl,
+        likeCount,
+        textOriginal,
+        updatedAt,
+        publishedAt
+    } = commentData;
+
+    
     const publishedDate = new Date(publishedAt);
 
     const updatedDate = new Date(updatedAt);
 
-
     return(
-        <div className="my-5 py-3">
-            <div className="flex items-center justify-between">
+        <div className="flex mt-3 items-center justify-between">
                 <div className="flex gap-2 items-center">
                     <a href={authorProfileImageUrl}><img src={authorProfileImageUrl} className="h-10 w-10 mr-4 rounded-full cursor-pointer hover:scale-125 duration-300 transition-all"></img></a>
                     <div className="w-full flex flex-col gap-1">
@@ -28,13 +44,13 @@ const CommentComponent = ({commentData})=>{
                             <button><i class="fa-regular fa-thumbs-up"></i> {formatViewCount(likeCount)}</button>   
                             <button> <i class="fa-regular fa-thumbs-down"></i></button>       
                          </div>
+                         <div>
+
+                         </div>
                     </div>
                 </div>
                 <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
             </div>
-            
-        </div>
     )
 }
-
-export default CommentComponent;
+export default CommentOnly;

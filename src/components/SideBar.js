@@ -1,8 +1,12 @@
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { closeMenu, toggleMenu } from "../utils/appSlice";
+import { useEffect, useRef } from "react";
 
 const SideBar = ()=>{
+   
     return(
-        <div className="w-[11%]  bg-white py-2 border">
+        <div className="w-[11%]  z-10 bg-white py-2 border">
             
             <ul className=" border-b border-b-gray-400 flex flex-col ">
                 <Link to="/" className="hover:bg-gray-300 duration-400 transition-all px-3 p-2"><li>Home</li></Link>

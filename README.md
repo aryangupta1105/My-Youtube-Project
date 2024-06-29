@@ -48,6 +48,13 @@
 - Created the Search Result Page using results 
 - fetched the video Data using videoId from search_query api hook
 - Setted routing to watch page from result Video Card using videoId
+- Cache Implemented: Optimized our Search Feature by making cache
+- created search Slice in our store 
+- Created Cache in our store to save the api calls of suggestions 
+- Created Comment List component
+- created comment only component
+- Updated Comment Section to Nested Comments like Reddit...
+
 
 
 

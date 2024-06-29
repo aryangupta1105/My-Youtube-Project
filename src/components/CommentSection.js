@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { userIcon } from "../utils/constants";
 import useVideoComment from "../utils/hooks/useVideoComments";
-import CommentComponent from "./CommentComponent";
+import CommentList from "./CommentList";
 
 const CommentSection = ({video})=>{
     const{snippet , statistics}  = video;
@@ -34,7 +34,7 @@ const CommentSection = ({video})=>{
                 <input type="text" className="w-full outline-none text-lg py-3 border-b border-b-gray-400" placeholder="Enter Your Comment" onChange={(e)=>setYourComment(e.target.value)} value={yourComment}></input>
                 {!yourComment|| yourComment===""?null:<button className="bg-blue-500 p-2 px-4 rounded-lg text-white">Submit</button>}
             </div>
-            {filteredComments?.map((comment)=>(<CommentComponent key={comment.id} commentData={comment} />))}
+            <CommentList comments={filteredComments} />
 
         </div>
     )
