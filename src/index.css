@@ -12,11 +12,21 @@
   }
 
 .element {
-    overflow: hidden; /* Hide the scrollbar */
+    overflow: scroll; /* Hide the scrollbar */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.filter {
+    overflow: scroll; /* Hide the scrollbar */
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
 
 .element::-webkit-scrollbar {
     display: none;  /* Safari and Chrome */
+}
+
+.filter::-webkit-scrollbar{
+    display: none
 }

@@ -3,7 +3,9 @@ import { formatViewCount } from "../utils/getDateGap";
 import usePfP from "../utils/hooks/usePfP";
 
 const ChannelDetail = ({video})=>{
-    const pfp = usePfP(video?.snippet?.channelId ); 
+    const[errorMessage , setErrorMessage] = useState("");
+
+    const pfp = usePfP(video?.snippet?.channelId , setErrorMessage ); 
     const{statistics , snippet} = video;
     const{likeCount } = statistics;
     const{channelTitle , localized } = snippet;

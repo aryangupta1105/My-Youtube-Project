@@ -46,27 +46,27 @@ const Header = ()=>{
     return(
         <div className="w-full overflow-hidden flex p-2 pr-4 justify-between  items-center ">
             <div className="flex items-center">
-                <i className="fa-solid fa-bars cursor-pointer text-lg mx-5" onClick={handleMenuClick} ></i>
+                <i className="fa-solid hover:bg-slate-200 duration-300 transition-all rounded-full h-10 w-10 flex items-center justify-center  fa-bars cursor-pointer text-lg mx-5" onClick={handleMenuClick} ></i>
                
                 <a href="/">
-                    <img src="https://logolook.net/wp-content/uploads/2021/06/Youtube-Logo.png" alt="Youtube-logo" className="h-12"></img>
+                    <img src="https://logolook.net/wp-content/uploads/2021/06/Youtube-Logo.png" alt="Youtube-logo" className="h-12" loading="lazy"></img>
                     
                 </a>
             </div>
             <div className="w-5/12 " ref={searchContainerRef}>
-                <div className="w-full ">
+                <form className="w-full " onSubmit={(e)=>e.preventDefault()}>
                     <input type="text" className="w-10/12 outline-none border border-gray-300 focus:border-blue-600 rounded-l-full px-4 p-2 " onChange={(e)=>{setSearchText(e.target.value);setIsSubmitted(false);}} value={searchText} placeholder=" Search"></input>
 
                     <button type="submit" onClick={handleSearchSubmit}className="w-1/12 p-2 px-2 h-full border border-gray-300 rounded-r-full"><i class="fa-solid fa-magnifying-glass"></i></button>
 
                     <button className="rounded-full ml-2 w-[40px] h-[40px] bg-gray-200 cursor-pointer "><i class="fa-solid fa-microphone"></i></button>
-                </div>
+                </form>
                
                 {!isSubmitted && searchText !==  ""  ? <SearchSuggestions setSearchText={setSearchText} setIsSubmitted={setIsSubmitted} suggestions={data}/> : null}
 
             </div>
             <div>
-                <img src={userIcon} className="h-8 cursor-pointer rounded-full border " alt="user-icon"></img>
+                <img src={userIcon} className="h-8 cursor-pointer rounded-full border " alt="user-icon" loading="lazy"></img>
             </div>
         </div>
     )

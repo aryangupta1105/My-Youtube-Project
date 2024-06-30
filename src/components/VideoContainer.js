@@ -5,8 +5,9 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 
 const VideoContainer = ()=>{
+    const[errorMessage , setErrorMessage] = useState("");
 
-   const videos = useVideos();
+   const videos = useVideos(setErrorMessage);
     if(!videos) return <Shimmer/>
     return(
         <div className="mt-5 flex  justify-center flex-wrap  gap-5 ">

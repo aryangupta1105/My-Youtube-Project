@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { GOOGLE_API_KEY, YOUTUBE_COMMENT_API_URL} from "../constants";
 
-const useVideoComment = (videoId)=>{
+const useVideoComment = (videoId ,setErrorMessage)=>{
     const [comments , setComments] = useState(null);
 
     useEffect(()=>{
@@ -11,9 +11,19 @@ const useVideoComment = (videoId)=>{
     },[])
 
     const getComments = async ()=>{
-        const data = await fetch(YOUTUBE_COMMENT_API_URL + videoId + "&key=" + GOOGLE_API_KEY);
-        const json = await data.json();
-        setComments(json?.items);
+        
+        try{ 
+            const data = await fetch(YOUTUBE_COMMENT_API_URL + videoId + "&key=" + GOOGLE_API_KEY);
+            if (!data.ok) {
+                throw new Error(`HTTP error! status: ${data.status}`);
+            }
+            const json = await data.json();
+            setComments(json?.items);
+        }
+        catch(err){
+            console.log(err.message);
+            setErrorMessage(err.message);
+        }
     }
 
     return comments;

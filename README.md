@@ -54,8 +54,34 @@
 - Created Comment List component
 - created comment only component
 - Updated Comment Section to Nested Comments like Reddit...
+- Creating Live Chat Feature: 
+    - Learned about Api polling
+    - used set interval to make api calls 
+    - used dummy data for api
+    - created helper.js to get random names and strings
+    - created LiveChat Component
+        - created ChatMessage Component
+    - created chatSlice in the REDUX store 
+    - reducers fxn like add message after a limit
+    - splice the messages from top
+    - col-reverse to add message at the bottom
+    - add your message to the live chat
+- Created Shimmer for result page
+    - created resultShimmer card component
+- Added search query api call to SideBar (MENU ITEMS)
+- Added Error handling to the api calls in custom hooks 
+- created custom hooks for each api calls 
 
 
+# New Topics learned: 
+- Creating Live Chat 
+- DeBouncing
+- Search Feature ( on each keystroke making an api call)
+- Api Polling used in Live Chat 
+- learned about unshift: used for pushing data in first
+- Object.assign to merge two objects..
+- Created searchCache to store the api calls already made 
+- optimized our search feature 
 
 Live App: [Link](https://by-aryan.web.app/)
 

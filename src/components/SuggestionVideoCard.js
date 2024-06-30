@@ -1,14 +1,16 @@
 
+import { useState } from "react";
 import { getDateGap , formatViewCount } from "../utils/getDateGap";
 import usePfP from "../utils/hooks/usePfP";
 
 const SuggestionVideoCard = ({videoData})=>{
     const {snippet , statistics ,id} = videoData;
     const{thumbnails, channelId , description , title , publishedAt} = snippet;
+    const[errorMessage , setErrorMessage] = useState("");
 
     const dateGap = getDateGap(publishedAt);
 
-    const pfp = usePfP(channelId);
+    const pfp = usePfP(channelId , setErrorMessage);
     if(!pfp && videoData) return null;
     return (
         <div className=" flex p-1 gap-5 items-start ">

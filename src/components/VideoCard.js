@@ -1,14 +1,16 @@
 
+import { useState } from "react";
 import { getDateGap , formatViewCount } from "../utils/getDateGap";
 import usePfP from "../utils/hooks/usePfP";
 
 const VideoCard = ({videoData , isResult})=>{
     const {snippet , statistics ,id} = videoData;
     const{thumbnails, channelId , description , title , publishedAt} = snippet;
+    const[errorMessage , setErrorMessage] = useState("");
 
     const dateGap = getDateGap(publishedAt);
 
-    const pfp = usePfP(channelId);
+    const pfp = usePfP(channelId , setErrorMessage);
     if(!pfp) return null;
     
     return !isResult?(

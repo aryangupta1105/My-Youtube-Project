@@ -4,7 +4,7 @@ import { json } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { cacheResults } from "../searchSlice";
 
-const useSearchSuggestion = (searchQuery)=>{
+const useSearchSuggestion = (searchQuery , setErrorMessage)=>{
     const [suggestions , setSuggestions] = useState([]);
     const searchCache = useSelector((store)=>store.search);
     const dispatch = useDispatch();
@@ -32,13 +32,23 @@ const useSearchSuggestion = (searchQuery)=>{
 
     const getSearchSuggestions = async ()=>{
         
-        const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
-        const json = await data.json();
+        
+        try{
+            const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+            if (!data.ok) {
+                throw new Error(`HTTP error! status: ${data.status}`);
+            }
+            const json = await data.json();
 
-        setSuggestions(json[1]);
-        dispatch(cacheResults({
-            [searchQuery]: json[1]}
-        ));
+            setSuggestions(json[1]);
+            dispatch(cacheResults({
+                [searchQuery]: json[1]}
+            ));
+        }
+        catch(err){
+            console.log(err.message);
+            setErrorMessage(err.message);
+        }
     }
 
     return suggestions;
