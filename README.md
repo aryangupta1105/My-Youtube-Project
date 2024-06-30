@@ -71,6 +71,10 @@
 - Added search query api call to SideBar (MENU ITEMS)
 - Added Error handling to the api calls in custom hooks 
 - created custom hooks for each api calls 
+- Created fetching channel by channel name feature 
+- Created custom hook to fetch channel by channel name
+- created resultChannel Component and added to searchResultPage
+
 
 
 # New Topics learned: 

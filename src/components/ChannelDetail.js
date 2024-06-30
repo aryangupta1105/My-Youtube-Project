@@ -1,23 +1,25 @@
 import { useState } from "react";
 import { formatViewCount } from "../utils/getDateGap";
 import usePfP from "../utils/hooks/usePfP";
-
 const ChannelDetail = ({video})=>{
     const[errorMessage , setErrorMessage] = useState("");
 
     const pfp = usePfP(video?.snippet?.channelId , setErrorMessage ); 
     const{statistics , snippet} = video;
     const{likeCount } = statistics;
-    const{channelTitle , localized } = snippet;
+    const{channelTitle , channelId , localized } = snippet;
     const [isSubscribed , setIsSubscribed] = useState(false);
+    
     return(
        <div>
          <h1 className="font-semibold w-full text-wrap py-2 text-lg">{localized.title}</h1>
         <div className="flex items-center justify-between">
                     {/* left part */}
                     <div className="flex gap-3 items-center">
-                        <img src={pfp} className="h-12 rounded-full"></img>
-                        <h2 className="font-bold ">{channelTitle}</h2>
+                        <a href={"https://www.youtube.com/channel/" + channelId} className="flex gap-3 items-center">
+                            <img src={pfp} className="h-12 rounded-full"></img>
+                            <h2 className="font-bold ">{channelTitle}</h2>
+                        </a>
                         <button className="bg-black text-white hover:bg-gray-800 ml-4 p-2 px-4 rounded-3xl " onClick={()=>{
                             setIsSubscribed(!isSubscribed);
                         }}>{isSubscribed ? "Unsubscribe" : "Subscribe"}</button>

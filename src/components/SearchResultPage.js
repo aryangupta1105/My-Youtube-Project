@@ -7,6 +7,8 @@ import ResultVideoCard from "./ResultVideoCard";
 import useVideoById from "../utils/hooks/useVideoById";
 import Shimmer from "./Shimmer";
 import ResultShimmer from "./ResultShimmer";
+import useChannelByName from "../utils/hooks/useChannelByName";
+import ResultChannel from "./ResultChannel";
 
 const SearchResultPage = ()=>{
     const [searchParams , setSearchParams] = useSearchParams();
@@ -19,9 +21,16 @@ const SearchResultPage = ()=>{
     }, [searchParams]);
     
     const results = useVideoBySearch(query , setErrorMessage);
+    
+    const channel = useChannelByName(query , setErrorMessage);
+    
     if(!(results && results.length >0)) return <ResultShimmer/>;
+
+    console.log(channel);
+
     return(
         <div className="w-full flex flex-col gap-3 px-14 py-4 ">
+            {<ResultChannel channel={channel}/>}
             {results?.map((video)=>(
                  <ResultVideoCard key={video?.id?.videoId} videoId={video?.id?.videoId}/>
             ))}
