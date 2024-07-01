@@ -8,6 +8,7 @@ import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
 import SearchResultPage from "./components/SearchResultPage";
 import Error from "./components/Error";
+import LoginPage from "./components/LoginPage";
 function App() {
 
 

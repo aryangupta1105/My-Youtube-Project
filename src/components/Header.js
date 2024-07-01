@@ -5,9 +5,10 @@ import { useEffect, useRef, useState } from "react";
 import useSearchSuggestion from "../utils/hooks/useSearchSuggestion";
 import SearchSuggestions from "./SearchSuggestions";
 import { useNavigate } from "react-router-dom";
+import UserMenu from "./UserMenu";
 const Header = ()=>{
     const[searchText , setSearchText] = useState("");
-
+    const [showUserMenu , setShowUserMenu] = useState(false);
     // its rendering the page on each state change but to make it efficient we will use debouncing.. to save some api calls..
     const dispatch = useDispatch();
     const data = useSearchSuggestion(searchText);
@@ -66,8 +67,8 @@ const Header = ()=>{
 
             </div>
             <div>
-                <img src={userIcon} className="h-8 cursor-pointer rounded-full border " alt="user-icon" loading="lazy"></img>
-            </div>
+                <img src={userIcon} onClick={()=>setShowUserMenu(!showUserMenu)} className="h-8 cursor-pointer rounded-full border " alt="user-icon" loading="lazy"></img>
+                 </div>
         </div>
     )
 }

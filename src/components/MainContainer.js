@@ -4,7 +4,7 @@ import VideoContainer from "./VideoContainer";
 
 const MainContainer = ()=>{
     return(
-        <div className="w-11/12  mx-auto">
+        <div className="w-[99%] mx-auto overflow-hidden px-4">
             <FilterButtonList/>
             <VideoContainer/>
         </div>

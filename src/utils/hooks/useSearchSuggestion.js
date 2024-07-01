@@ -47,7 +47,6 @@ const useSearchSuggestion = (searchQuery , setErrorMessage)=>{
         }
         catch(err){
             console.log(err.message);
-            setErrorMessage(err.message);
         }
     }
 
