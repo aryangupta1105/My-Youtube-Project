@@ -3,7 +3,7 @@ import ChatMessage from "./ChatMessage";
 import { useDispatch, useSelector } from "react-redux";
 import { addMessage, clearMessage } from "../utils/chatSlice";
 import { generateRandomNames, makeRandomMessages } from "../utils/helper";
-import { userIcon } from "../utils/constants";
+import { NOT_AVAILABLE, userIcon } from "../utils/constants";
 
 const LiveChat = ()=>{
     const messages = useSelector((store)=>store.chat.messages);
@@ -61,7 +61,7 @@ const LiveChat = ()=>{
                 </div>
 {/* Add your chat to the live chat. */}
                 <form className="w-full border-t border-t-gray-300 py-2 flex " onSubmit={(e)=>e.preventDefault()}>
-                    <img src={userIcon} className="h-8 w-8 rounded-full border border-black" loading="lazy"></img>
+                    <img src={userIcon || NOT_AVAILABLE} className="h-8 w-8 rounded-full border border-black" loading="lazy"></img>
                     <input type="text" ref={liveMessage}  placeholder="Enter your message" className="w-11/12 px-4 p-2 outline-none "></input>
                     <button className="w-8 h-8 rounded-full border outline-none" onClick={handleLiveChat}><i class="fa-solid fa-paper-plane"></i></button>
                 </form>

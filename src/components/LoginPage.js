@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { YOUTUBE_LOGO } from "../utils/constants";
+import { NOT_AVAILABLE, YOUTUBE_LOGO } from "../utils/constants";
 import { checkValidData } from "../utils/Validate";
 import { googleLogin, signIn, signUp } from "../utils/SignUpSignIn";
 import { useDispatch } from "react-redux";
@@ -42,7 +42,7 @@ const LoginPage = ()=>{
         <div className="bg-slate-100 h-screen w-screen overflow-hidden flex items-center justify-center ">
             <div className="flex  gap-5 h-[500px] w-8/12 p-5 mx-auto px-10 justify-center bg-white">
                 <div className="w-5/12 mt-10">
-                    <img src={YOUTUBE_LOGO} className=" h-32 w-32 object-contain"></img>
+                    <img src={YOUTUBE_LOGO|| NOT_AVAILABLE} className=" h-32 w-32 object-contain"></img>
                     <h1 className="font-semibold text-4xl -mt-5 text-gray-600 ">{isSignIn? "Sign In": "Sign Up"}</h1>
                     {isSignIn && <div>
                     <p className="mt-10">OR <br></br>Login using </p>

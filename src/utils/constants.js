@@ -17,6 +17,8 @@ export const monthNames = [
     "July", "August", "September", "October", "November", "December"
 ];
 
+export const NOT_AVAILABLE= "https://th.bing.com/th/id/OIP.MvgjeMBHxcKil9_H4jQcvgAAAA?rs=1&pid=ImgDetMain";
+
 export const YOUTUBE_LOGO = "https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo-2015-2017.png";
 
 export const loader = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhiQ-Kr98qaJsInfJFyTiNVq-412fnzcyUmv2LjzN8N2fTgzGDUdpHReGTblo7rR8akv9n2P9dngceyyZSqlm_jUxKKopguTijlOGBcJNyrUInN4oW2hKvQNDU9Yj2BW0JYNNW-1MEoTaqQOHN33-EbWnl__gs403OX8_cO9zSAeive8SnJVbbT9owS/s1600/pure-css-progress-bar-animation-using-html-and-css-demo.gif";

@@ -75,6 +75,8 @@
 - Created custom hook to fetch channel by channel name
 - created resultChannel Component and added to searchResultPage
 - Adding Firebase authentication to the app but not working due to api consent issue..
+- Deploying our app
+
 
 
 

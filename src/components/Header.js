@@ -1,14 +1,13 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
-import { userIcon } from "../utils/constants";
+import { NOT_AVAILABLE, userIcon } from "../utils/constants";
 import { useEffect, useRef, useState } from "react";
 import useSearchSuggestion from "../utils/hooks/useSearchSuggestion";
 import SearchSuggestions from "./SearchSuggestions";
 import { useNavigate } from "react-router-dom";
-import UserMenu from "./UserMenu";
 const Header = ()=>{
     const[searchText , setSearchText] = useState("");
-    const [showUserMenu , setShowUserMenu] = useState(false);
+  
     // its rendering the page on each state change but to make it efficient we will use debouncing.. to save some api calls..
     const dispatch = useDispatch();
     const data = useSearchSuggestion(searchText);
@@ -47,10 +46,10 @@ const Header = ()=>{
     return(
         <div className="w-full overflow-hidden flex p-2 pr-4 justify-between  items-center ">
             <div className="flex items-center">
-                <i className="fa-solid hover:bg-slate-200 duration-300 transition-all rounded-full h-10 w-10 flex items-center justify-center  fa-bars cursor-pointer text-lg mx-5" onClick={handleMenuClick} ></i>
+                <i className="fa-solid hover:bg-slate-200 duration-300 transition-all rounded-full h-10 w-10 flex items-center justify-center  fa-bars cursor-pointer text-lg mx-5"  onClick={handleMenuClick} ></i>
                
                 <a href="/">
-                    <img src="https://logolook.net/wp-content/uploads/2021/06/Youtube-Logo.png" alt="Youtube-logo" className="h-12" loading="lazy"></img>
+                    <img src={"https://logolook.net/wp-content/uploads/2021/06/Youtube-Logo.png" || NOT_AVAILABLE}alt="Youtube-logo" className="h-12" loading="lazy"></img>
                     
                 </a>
             </div>
@@ -67,7 +66,7 @@ const Header = ()=>{
 
             </div>
             <div>
-                <img src={userIcon} onClick={()=>setShowUserMenu(!showUserMenu)} className="h-8 cursor-pointer rounded-full border " alt="user-icon" loading="lazy"></img>
+                <img src={userIcon|| NOT_AVAILABLE} className="h-8 cursor-pointer rounded-full border " alt="user-icon" loading="lazy"></img>
                  </div>
         </div>
     )

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { getDateGap , formatViewCount } from "../utils/getDateGap";
 import usePfP from "../utils/hooks/usePfP";
+import { NOT_AVAILABLE } from "../utils/constants";
 
 const VideoCard = ({videoData , isResult})=>{
     const {snippet , statistics ,id} = videoData;
@@ -15,7 +16,7 @@ const VideoCard = ({videoData , isResult})=>{
     
     return !isResult?(
         <div className="w-[300px] p-1">
-            <img src={thumbnails.high.url || thumbnails.maxres.url || thumbnails.standard.url || thumbnails.medium.url || thumbnails.default.url} className="w-[300px] h-[200px] object-fit rounded-lg" loading="lazy"></img>
+            <img src={thumbnails.high.url || thumbnails.maxres.url || thumbnails.standard.url || thumbnails.medium.url || thumbnails.default.url || NOT_AVAILABLE} className="w-[300px] h-[200px] object-fit rounded-lg" loading="lazy"></img>
             {/* bottom part */}
             <div className="flex gap-5 items-center">
                 {/* left part */}
@@ -30,7 +31,7 @@ const VideoCard = ({videoData , isResult})=>{
         </div>
     ):(
         <div className="w-full flex gap-5 p-1">
-            <img src={thumbnails.high.url || thumbnails.maxres.url || thumbnails.standard.url || thumbnails.medium.url || thumbnails.default.url} className="max-w-[400px] h-[253px] object-cover rounded-lg" loading="lazy"></img>
+            <img src={thumbnails.high.url || thumbnails.maxres.url || thumbnails.standard.url || thumbnails.medium.url || thumbnails.default.url || NOT_AVAILABLE} className="max-w-[400px] h-[253px] object-cover rounded-lg" loading="lazy"></img>
             {/* bottom part */}
             <div className="flex flex-col ">
                

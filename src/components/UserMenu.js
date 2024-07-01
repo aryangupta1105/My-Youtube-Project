@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { userIcon } from "../utils/constants";
+import { NOT_AVAILABLE, userIcon } from "../utils/constants";
 import { useSelector } from "react-redux";
 
 const UserMenu = ({setShowUserMenu})=>{
@@ -9,7 +9,7 @@ const UserMenu = ({setShowUserMenu})=>{
     return(
         <div className="w-[300px] absolute right-14 bg-white px-5 py-2 top-10 rounded-lg border h-fit">
             <div>
-                <img src={userIcon} className="h-10 w-10 rounded-full"></img>
+                <img src={userIcon || NOT_AVAILABLE} className="h-10 w-10 rounded-full"></img>
                 <div className="flex flex-col border-b  gap-2">
                     <h2 className="text-lg ">{user?user.displayName :"Default User"}</h2>
                     <p>@userName</p>

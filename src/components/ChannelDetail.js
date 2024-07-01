@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { formatViewCount } from "../utils/getDateGap";
 import usePfP from "../utils/hooks/usePfP";
+import { NOT_AVAILABLE } from "../utils/constants";
 const ChannelDetail = ({video})=>{
     const[errorMessage , setErrorMessage] = useState("");
 
@@ -17,7 +18,7 @@ const ChannelDetail = ({video})=>{
                     {/* left part */}
                     <div className="flex gap-3 items-center">
                         <a href={"https://www.youtube.com/channel/" + channelId} className="flex gap-3 items-center">
-                            <img src={pfp} className="h-12 rounded-full"></img>
+                            <img src={pfp|| NOT_AVAILABLE} className="h-12 rounded-full"></img>
                             <h2 className="font-bold ">{channelTitle}</h2>
                         </a>
                         <button className="bg-black text-white hover:bg-gray-800 ml-4 p-2 px-4 rounded-3xl " onClick={()=>{

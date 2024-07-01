@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NOT_AVAILABLE } from "../utils/constants";
 
 const ResultChannel = ({channel})=>{
     console.log(channel);
@@ -10,7 +11,7 @@ const ResultChannel = ({channel})=>{
         <div className="flex my-4 items-center">
             <a href={"https://www.youtube.com/channel/" + channelId} className="w-full flex items-center gap-5 p-1">
             <div className="w-[400px] flex items-center justify-center h-[233px]">
-                <img src={thumbnails.high.url || thumbnails.maxres.url || thumbnails.standard.url || thumbnails.medium.url || thumbnails.default.url} className="rounded-full h-[180px] w-[180px] object-cover " loading="lazy"></img>
+                <img src={thumbnails.high.url || thumbnails.maxres.url || thumbnails.standard.url || thumbnails.medium.url || thumbnails.default.url || NOT_AVAILABLE} className="rounded-full h-[180px] w-[180px] object-cover " loading="lazy"></img>
                 
             </div>
             {/* bottom part */}
