@@ -11,7 +11,7 @@ const VideoContainer = ()=>{
    const videos = useVideos(setErrorMessage);
     if(!videos) return <Shimmer/>
     return(
-        <div className="mt-5 flex justify-center flex-wrap gap-5">
+        <div className="mt-5 flex justify-center flex-wrap md:gap-5">
             {videos?.map((video)=>(<Link  to={"/watch?v=" + video?.id} key={video?.id} ><VideoCard  videoData={video}/></Link>))}
         </div>
     )

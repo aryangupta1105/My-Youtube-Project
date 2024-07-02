@@ -15,7 +15,7 @@ const VideoCard = ({videoData , isResult})=>{
     if(!pfp) return null;
     
     return !isResult?(
-        <div className="w-[300px] p-1">
+        <div className="w-[300px]  p-1">
             <img src={thumbnails.high.url || thumbnails.maxres.url || thumbnails.standard.url || thumbnails.medium.url || thumbnails.default.url || NOT_AVAILABLE} className="w-[300px] h-[200px] object-fit rounded-lg" loading="lazy"></img>
             {/* bottom part */}
             <div className="flex gap-5 items-center">
@@ -30,10 +30,10 @@ const VideoCard = ({videoData , isResult})=>{
             </div>
         </div>
     ):(
-        <div className="w-full flex gap-5 p-1">
+        <div className="w-full md:pl-0 pl-10 flex flex-col md:flex-row mx-auto gap-5 p-1">
             <img src={thumbnails.high.url || thumbnails.maxres.url || thumbnails.standard.url || thumbnails.medium.url || thumbnails.default.url || NOT_AVAILABLE} className="max-w-[400px] h-[253px] object-cover rounded-lg" loading="lazy"></img>
             {/* bottom part */}
-            <div className="flex flex-col ">
+            <div className="flexflex-col ">
                
                     <h1 className="w-11/12 truncate2 font-bold ">{title}</h1>
                     
@@ -45,7 +45,7 @@ const VideoCard = ({videoData , isResult})=>{
                     <p className="truncate2 cursor-pointer overflow-ellipsis w-11/12">{description}</p>
             </div>
             
-            <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            <button className="hidden md:block"><i class="fa-solid fa-ellipsis-vertical"></i></button>
         </div>
     )
 }

@@ -88,7 +88,8 @@
 - learned about unshift: used for pushing data in first
 - Object.assign to merge two objects..
 - Created searchCache to store the api calls already made 
-- optimized our search feature 
+- optimized our search feature
+- Made the app responsive. 
 
 Live App: [Link](https://by-aryan.web.app/)
 

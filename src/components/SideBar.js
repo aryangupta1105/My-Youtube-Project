@@ -17,7 +17,7 @@ const SideBar = ()=>{
     ,"Fashion & beauty"
     ]
     return(
-        <div className="w-fit px-3 z-10 bg-white py-2 border">
+        <div className="w-fit absolute lg:relative px-3 z-10 bg-white py-2 border">
             
             <ul className=" border-b border-b-gray-400 py-2  flex flex-col ">
                 <Link to="/" className="hover:bg-gray-300 duration-400 rounded-lg  transition-all px-3 p-2"><li><i class="fa-solid fa-house mr-3 "></i>Home</li></Link>

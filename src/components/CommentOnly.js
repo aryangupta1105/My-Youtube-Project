@@ -39,7 +39,7 @@ const CommentOnly = ({TopLevelData , isReply})=>{
                             </a>
                             <p className="hover:text-gray-600 cursor-pointer text-gray-500">{getDateGap(publishedDate) || getDateGap(updatedAt)}</p>
                        </div>
-                        <p className="text-[0.8rem]">{textOriginal}</p>
+                        <p className="w-[95%] text-[0.8rem]">{textOriginal}</p>
                         <div className="flex gap-3 items-center">
                             <button><i class="fa-regular fa-thumbs-up"></i> {formatViewCount(likeCount)}</button>   
                             <button> <i class="fa-regular fa-thumbs-down"></i></button>       

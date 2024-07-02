@@ -38,8 +38,8 @@ const WatchPage = ()=>{
 
 
     return(
-        <div className="w-full pl-[6%] flex absolute -z-5 text-sm ">
-            <div className="w-8/12">
+        <div className="w-full  px-[6%] gap-3 flex flex-col lg:flex-row absolute -z-5 text-sm ">
+            <div className="lg:w-8/12 w-full">
                 <iframe width="560" height="315" src={"https://www.youtube.com/embed/"+videoId+ "?rel=0&modestbranding=1&showinfo=0&autoplay=1"}title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="w-full rounded-xl p-0 h-[530px]"></iframe>
                 
                 

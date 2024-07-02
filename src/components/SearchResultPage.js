@@ -29,7 +29,7 @@ const SearchResultPage = ()=>{
     console.log(channel);
 
     return(
-        <div className="w-full flex flex-col gap-3 px-14 py-4 ">
+        <div className="w-full overflow-hidden flex flex-col gap-3 md:px-14 py-4 ">
             {<ResultChannel channel={channel}/>}
             {results?.map((video)=>(
                  <ResultVideoCard key={video?.id?.videoId} videoId={video?.id?.videoId}/>

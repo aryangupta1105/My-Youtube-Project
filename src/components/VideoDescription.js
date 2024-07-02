@@ -14,12 +14,12 @@ const VideoDescription = ({video})=>{
 
     return(
         <div className="bg-gray-200 px-4 p-2 rounded-xl my-3">
-            <div className="flex justify-between gap-2 font-semibold ">
-                <div className="w-3/12 flex gap-4">
+            <div className="flex flex-col md:flex-row justify-between gap-2 font-semibold ">
+                <div className="md:w-3/12 w-full flex gap-4">
                 {viewCount?<p>{formatViewCount(viewCount)} views</p>:null}
                 <p>{publishedDate.getDate()} {monthNames[publishedDate.getMonth()]}  {publishedDate.getFullYear()}</p>
                 </div>
-                <div className="w-9/12 flex flex-wrap gap-1">
+                <div className="md:w-9/12 flex flex-wrap gap-1">
                     {tags?.map((tag)=>(<p className="cursor-pointer text-blue-600">{"#"+tag}</p>))}
                 </div>
             </div>

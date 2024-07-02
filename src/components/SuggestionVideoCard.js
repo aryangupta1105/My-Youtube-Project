@@ -13,13 +13,13 @@ const SuggestionVideoCard = ({videoData})=>{
     const pfp = usePfP(channelId , setErrorMessage);
     if(!pfp && videoData) return null;
     return (
-        <div className=" flex p-1 gap-5 items-start ">
-            <img src={thumbnails.high.url || thumbnails.maxres.url || thumbnails.standard.url || thumbnails.medium.url || thumbnails.default.url} loading="lazy" className="w-[180px] h-[100px] object-cover rounded-lg"></img>
+        <div className="w-full flex p-1 gap-5 items-start md:justify-start justify-between">
+            <img src={thumbnails.high.url || thumbnails.maxres.url || thumbnails.standard.url || thumbnails.medium.url || thumbnails.default.url} loading="lazy" className="max-w-[180px] h-[100px] object-cover rounded-lg"></img>
             {/* bottom part */}
-            <div className="flex gap-5 items-center">
+            <div className="w-full flex gap-5 items-center">
                 
                 <div>
-                    <h1 className="w-[150px] truncate2 text-sm font-bold ">{title}</h1>
+                    <h1 className="lg:w-[150px] line-clamp-2 text-wrap  text-sm font-bold ">{title}</h1>
                     <p>{snippet.channelTitle}</p>
                     <p>{formatViewCount(statistics.viewCount) + " views"} - {dateGap}</p>
                 </div>

@@ -14,9 +14,9 @@ const VideoSuggestionSection = ({isLive})=>{
     const videos = useVideos(setErrorMessage);
     if(!videos) return <div className="w-3/12 overflow-hidden"><ResultShimmer/></div>;
     return(
-        <div className=" w-4/12 px-5 ">
-            <div className="flex flex-col gap-3 overflow-y-scroll element h-full ">
-            {isLive === "live" ? (<LiveChat />):<p className="text-center font-bold text-gray-500">Live Chat not available</p>}
+        <div className=" lg:w-4/12  px-5 ">
+            <div className="flex flex-col  w-full gap-3 overflow-y-scroll element h-full ">
+            {isLive === "live" ? (<LiveChat />):<p className="text-center font-bold text-gray-500 mx-auto">Live Chat not available</p>}
             <FilterButtonList/>
             {videos?.map((video)=>(<a  href={"/watch?v=" + video?.id} ><SuggestionVideoCard  videoData={video}/></a>))}
             </div>

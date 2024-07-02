@@ -5,7 +5,7 @@ const SearchSuggestions = ({suggestions , setIsSubmitted , setSearchText})=>{
 
     
     return suggestions.length>0? (
-        <div className="fixed top-0 z-10 shadow-md  pb-4  ml-4  bg-white my-14 rounded-lg w-4/12">
+        <div className="fixed top-0 z-10 shadow-md  pb-4  md:ml-4 mr-4 md:mr-0  bg-white my-14 rounded-lg md:w-4/12">
             {suggestions?.map((suggestion)=>
             (
             <Link to={"/results?search_query=" + suggestion} onClick={()=>{setIsSubmitted(true) ; setSearchText(suggestion)}} className="h-full px-5 py-2 hover:bg-gray-200 flex-col flex" key={suggestion}>
