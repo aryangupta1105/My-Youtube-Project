@@ -60,7 +60,7 @@ const Header = ()=>{
                     <input type="text" className="w-10/12  outline-none border border-gray-300 focus:border-blue-600 rounded-l-full px-4 p-2 " onChange={(e)=>{setSearchText(e.target.value);setIsSubmitted(false);}} value={searchText} placeholder=" Search">
                     </input>
                 
-                    {searchText!=="" && <button className="absolute top-4 right-[35%] h-8 w-8 rounded-full" onClick={()=>setSearchText("")}>X</button>}
+                    
                     
                     <button type="submit" onClick={handleSearchSubmit}className="md:w-[50px] p-2 px-2 h-full w-fit border border-gray-300 rounded-r-full"><i class="fa-solid fa-magnifying-glass md:text-md text-sm"></i></button>
                     </div>
